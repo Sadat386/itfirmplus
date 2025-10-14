@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team - IT Firm Plus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="/" class="logo">IT Firm Plus</a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="team-section">
+            <div class="container">
+                <h2>Our Talented Team</h2>
+                <div id="team-members-grid" class="grid-container">
+                    <!-- Team members will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IT Firm Plus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Team Member Modal -->
+    <div id="team-member-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <img id="modal-member-img" src="" alt="" class="team-member-img">
+            <h3 id="modal-member-name"></h3>
+            <p id="modal-member-position"></p>
+            <p id="modal-member-expertise"></p>
+            <p id="modal-member-bio"></p>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamMembersGrid = document.getElementById('team-members-grid');
+            const teamMemberModal = document.getElementById('team-member-modal');
+            const modalCloseButton = teamMemberModal.querySelector('.close-button');
+            const modalMemberImg = document.getElementById('modal-member-img');
+            const modalMemberName = document.getElementById('modal-member-name');
+            const modalMemberPosition = document.getElementById('modal-member-position');
+            const modalMemberExpertise = document.getElementById('modal-member-expertise');
+            const modalMemberBio = document.getElementById('modal-member-bio');
+
+            const teamMembersData = [
+                {
+                    name: 'Alice Johnson',
+                    position: 'Lead Developer',
+                    imageUrl: 'https://via.placeholder.com/150/0A2647/FFFFFF?text=AJ',
+                    expertise: 'Web Development, Web Applications, Desktop Apps, Logo Design, Graphics',
+                    bio: 'Alice is a full-stack developer with a passion for creating beautiful and functional web applications. She has extensive experience in various programming languages and frameworks.'
+                },
+                {
+                    name: 'Bob Williams',
+                    position: 'Data Scientist',
+                    imageUrl: 'https://via.placeholder.com/150/1C82AD/FFFFFF?text=BW',
+                    expertise: 'Python Development, Data Analysis, Machine Learning',
+                    bio: 'Bob is an expert in Python development and data analysis. He loves to extract insights from complex datasets and build intelligent systems.'
+                },
+                {
+                    name: 'Charlie Brown',
+                    position: 'Cyber Security Analyst',
+                    imageUrl: 'https://via.placeholder.com/150/20BF55/FFFFFF?text=CB',
+                    expertise: 'Cyber Security, Network Security, Ethical Hacking',
+                    bio: 'Charlie is a seasoned cyber security analyst with a strong background in protecting digital assets and ensuring data integrity. He is always up-to-date with the latest security threats and countermeasures.'
+                },
+                {
+                    name: 'Diana Prince',
+                    position: 'Creative Director',
+                    imageUrl: 'https://via.placeholder.com/150/F8F9FA/343A40?text=DP',
+                    expertise: 'Graphics, Video Editing, UI/UX Design, Branding',
+                    bio: 'Diana is a creative powerhouse, specializing in graphics, video editing, and UI/UX design. She brings ideas to life with stunning visuals and engaging user experiences.'
+                }
+            ];
+
+            const displayTeamMembers = () => {
+                teamMembersGrid.innerHTML = '';
+                teamMembersData.forEach(member => {
+                    const memberCard = document.createElement('div');
+                    memberCard.className = 'service-card team-member-card';
+                    memberCard.innerHTML = `
+                        <img src="${member.imageUrl}" alt="${member.name}" class="team-member-img">
+                        <h3>${member.name}</h3>
+                        <p>${member.position}</p>
+                    `;
+                    memberCard.addEventListener('click', () => {
+                        modalMemberImg.src = member.imageUrl;
+                        modalMemberImg.alt = member.name;
+                        modalMemberName.textContent = member.name;
+                        modalMemberPosition.textContent = member.position;
+                        modalMemberExpertise.textContent = 'Expertise: ' + member.expertise;
+                        modalMemberBio.textContent = member.bio;
+                        teamMemberModal.style.display = 'block';
+                    });
+                    teamMembersGrid.appendChild(memberCard);
+                });
+            };
+
+            modalCloseButton.addEventListener('click', () => {
+                teamMemberModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', (e) => {
+                if (e.target == teamMemberModal) {
+                    teamMemberModal.style.display = 'none';
+                }
+            });
+
+            displayTeamMembers();
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

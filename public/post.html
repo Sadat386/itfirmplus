@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - IT Firm Plus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="/" class="logo">IT Firm Plus</a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="post">
+            <div id="post-content" class="container">
+                <!-- Single blog post will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IT Firm Plus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const postContent = document.getElementById('post-content');
+            const postId = new URLSearchParams(window.location.search).get('id');
+
+            const fetchPost = async () => {
+                try {
+                    const res = await fetch(`/api/posts/${postId}`);
+                    const post = await res.json();
+
+                    document.title = `${post.title} - IT Firm Plus`;
+
+                    postContent.innerHTML = `
+                        <h1 class="post-title">${post.title}</h1>
+                        <p class="post-meta">By ${post.author} on ${new Date(post.date).toLocaleDateString()}</p>
+                        <div class="post-body">${post.content.replace(/\n/g, '<br>')}</div>
+                    `;
+                } catch (err) {
+                    console.error('Error fetching post:', err);
+                    postContent.innerHTML = '<p class="text-center">Post not found.</p>';
+                }
+            };
+
+            if (postId) {
+                fetchPost();
+            }
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

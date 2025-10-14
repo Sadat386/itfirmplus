@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - IT Firm Plus</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="/" class="logo">IT Firm Plus</a>
+            <ul class="nav-links">
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+            </ul>
+            <button id="mobile-menu-button" class="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="mobile-menu">
+            <ul>
+                <li><a href="/index.html">Home</a></li>
+                <li><a href="/services.html">Services</a></li>
+                <li><a href="/about.html">About Us</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+                <li><a href="/team.html">Team</a></li>
+                <li><a href="/portfolio.html">Portfolio</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <section class="about-us">
+            <div class="container">
+                <h2>About Us</h2>
+                <p>From a small team of passionate developers, IT Firm Plus has grown into a full-service digital agency. Our journey is one of perseverance, innovation, and a relentless commitment to our clients' success.</p>
+            </div>
+        </section>
+
+        <section id="skills">
+            <div class="container">
+                <h2>Our Skills</h2>
+                <div class="skills-grid">
+                    <div class="skill-card"><h3>HTML</h3></div>
+                    <div class="skill-card"><h3>CSS</h3></div>
+                    <div class="skill-card"><h3>JavaScript</h3></div>
+                    <div class="skill-card"><h3>React</h3></div>
+                    <div class="skill-card"><h3>Node.js</h3></div>
+                    <div class="skill-card"><h3>MongoDB</h3></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="stats">
+            <div class="container">
+                <h2>Company Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3 id="projects-completed">0</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="clients-served">0</h3>
+                        <p>Clients Served</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3 id="years-experience">0</h3>
+                        <p>Years of Experience</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="team">
+            <div class="container">
+                <h2>Our Team</h2>
+                <div id="team-grid" class="grid-container">
+                    <!-- Team members will be dynamically loaded here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 IT Firm Plus. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const teamGrid = document.getElementById('team-grid');
+            const projectsCompleted = document.getElementById('projects-completed');
+            const clientsServed = document.getElementById('clients-served');
+            const yearsExperience = document.getElementById('years-experience');
+
+            const animateCounter = (element, target) => {
+                let current = 0;
+                const step = target / 100;
+                const interval = setInterval(() => {
+                    current += step;
+                    if (current >= target) {
+                        clearInterval(interval);
+                        element.innerText = target;
+                    } else {
+                        element.innerText = Math.ceil(current);
+                    }
+                }, 20);
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounter(projectsCompleted, 200);
+                        animateCounter(clientsServed, 150);
+                        animateCounter(yearsExperience, new Date().getFullYear() - 2018);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            if (projectsCompleted && clientsServed && yearsExperience) {
+                observer.observe(document.getElementById('stats'));
+            }
+
+            const fetchTeamMembers = async () => {
+                try {
+                    const res = await fetch('/api/team');
+                    const teamMembers = await res.json();
+
+                    teamGrid.innerHTML = ''; // Clear existing content
+
+                    teamMembers.forEach(member => {
+                        const teamCard = document.createElement('div');
+                        teamCard.className = 'service-card';
+                        teamCard.innerHTML = `
+                            <img src="${member.imageUrl}" alt="${member.name}" class="team-member-img">
+                            <h3>${member.name}</h3>
+                            <p>${member.position}</p>
+                        `;
+                        teamGrid.appendChild(teamCard);
+                    });
+                } catch (err) {
+                    console.error('Error fetching team members:', err);
+                }
+            };
+
+            fetchTeamMembers();
+
+            // Mobile menu toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>

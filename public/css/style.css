@@ -1,0 +1,497 @@
+/* General Body Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #343A40;
+    background-color: #ffffff;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: #0A2647;
+}
+
+/* Header */
+header {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e0e0e0;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 1rem 5%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav a {
+    text-decoration: none;
+    color: #343A40;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+}
+
+nav a:hover {
+    color: #1C82AD;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.mobile-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #1C82AD;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-primary:hover {
+    background-color: #0A2647;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #F8F9FA;
+    color: #343A40;
+    padding: 100px 5%;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Sections */
+section {
+    padding: 80px 5%;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+}
+
+/* Grid Container */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+/* Service Card */
+.service-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    padding: 2rem;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+}
+
+.service-card i {
+    font-size: 3rem;
+    color: #1C82AD;
+    margin-bottom: 1rem;
+}
+
+.service-card h3 {
+    color: #0A2647;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Skills */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+    text-align: center;
+}
+
+.skill-card {
+    background-color: #F8F9FA;
+    padding: 1rem;
+    border-radius: 0.25rem;
+}
+
+/* Stats */
+#stats {
+    background-color: #0A2647;
+    color: #ffffff;
+}
+
+#stats h2 {
+    color: #ffffff;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-card h3 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Team Section */
+.team-section .grid-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.team-member-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+
+.team-member-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid #1C82AD;
+}
+
+.team-member-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.team-member-card p {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Team Member Modal */
+#team-member-modal .modal-content {
+    text-align: center;
+}
+
+#team-member-modal .team-member-img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 4px solid #1C82AD;
+}
+
+#modal-member-name {
+    font-size: 2rem;
+    color: #0A2647;
+    margin-bottom: 0.5rem;
+}
+
+#modal-member-position {
+    font-size: 1.2rem;
+    color: #1C82AD;
+    margin-bottom: 1rem;
+}
+
+#modal-member-expertise {
+    font-size: 1rem;
+    color: #343A40;
+    margin-bottom: 1rem;
+}
+
+#modal-member-bio {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #343A40;
+}
+
+/* Team */
+.team-member-img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 0 auto 1rem;
+}
+
+/* Portfolio */
+.filter-bar {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: #343A40;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.filter-btn.active {
+    color: #1C82AD;
+    font-weight: bold;
+}
+
+.project-img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 0.25rem;
+    margin-bottom: 1rem;
+}
+
+/* Blog */
+.search-bar-container {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#search-input {
+    width: 50%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 1rem;
+}
+
+/* Post */
+.post-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.post-body {
+    line-height: 1.8;
+}
+
+/* Contact Form */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
+
+.form-success {
+    color: #20BF55;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.form-error {
+    color: #dc3545;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Testimonial Section */
+#testimonials {
+    background-color: #F8F9FA;
+}
+
+.testimonial-card {
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    padding: 2rem;
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-card .quote {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin-bottom: 1rem;
+}
+
+.testimonial-card .author {
+    font-weight: bold;
+}
+
+/* Footer */
+footer {
+    background-color: #0A2647;
+    color: #ffffff;
+    padding: 2rem 5%;
+    text-align: center;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 0.5rem;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Pagination */
+.pagination-container {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.pagination-link {
+    background: none;
+    border: 1px solid #ced4da;
+    color: #343A40;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 0.25rem;
+}
+
+.pagination-link.active {
+    background-color: #1C82AD;
+    color: #ffffff;
+    border-color: #1C82AD;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu-button {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #ffffff;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 1rem 0;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+        text-align: center;
+    }
+
+    .mobile-menu li {
+        padding: 1rem 0;
+    }
+}
