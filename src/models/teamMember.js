@@ -13,6 +13,14 @@ const teamMemberSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    expertise: {
+        type: String,
+        required: false,
+    },
+    bio: {
+        type: String,
+        required: false,
+    },
 });
 
 const TeamMember = mongoose.model('TeamMember', teamMemberSchema);

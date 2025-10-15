@@ -8,7 +8,7 @@
     <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="contact-page">
 
     <header>
         <nav>
@@ -46,12 +46,16 @@
                         <form id="contact-form">
                             <div id="form-response"></div>
                             <div class="form-group">
-                                <label for="name">Name:</label>
+                                <label for="name">Full Name:</label>
                                 <input type="text" id="name" name="name" required>
                             </div>
                             <div class="form-group">
                                 <label for="email">Email:</label>
                                 <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="number">Number:</label>
+                                <input type="text" id="number" name="number" required>
                             </div>
                             <div class="form-group">
                                 <label for="message">Message:</label>
@@ -60,7 +64,13 @@
                             <button type="submit" class="btn-primary">Send Message</button>
                         </form>
                     </div>
-                    <div id="map"></div>
+                    <div class="contact-info-container">
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-phone"></i> +1 234 567 890</p>
+                        <p><i class="fas fa-envelope"></i> contact@itfirmplus.com</p>
+                        <p><i class="fab fa-whatsapp"></i> +1 234 567 890</p>
+                        <p><i class="fab fa-facebook"></i> facebook.com/itfirmplus</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -116,15 +126,7 @@
                 mobileMenu.classList.toggle('active');
             });
         });
-
-        function initMap() {
-            const map = new google.maps.Map(document.getElementById("map"), {
-                center: { lat: -34.397, lng: 150.644 },
-                zoom: 8,
-            });
-        }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 </body>
 </html>

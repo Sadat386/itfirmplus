@@ -8,7 +8,7 @@
     <link href="/css/style.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
-<body>
+<body class="team-page">
 
     <header>
         <nav>
@@ -77,59 +77,34 @@
             const modalMemberExpertise = document.getElementById('modal-member-expertise');
             const modalMemberBio = document.getElementById('modal-member-bio');
 
-            const teamMembersData = [
-                {
-                    name: 'Alice Johnson',
-                    position: 'Lead Developer',
-                    imageUrl: 'https://via.placeholder.com/150/0A2647/FFFFFF?text=AJ',
-                    expertise: 'Web Development, Web Applications, Desktop Apps, Logo Design, Graphics',
-                    bio: 'Alice is a full-stack developer with a passion for creating beautiful and functional web applications. She has extensive experience in various programming languages and frameworks.'
-                },
-                {
-                    name: 'Bob Williams',
-                    position: 'Data Scientist',
-                    imageUrl: 'https://via.placeholder.com/150/1C82AD/FFFFFF?text=BW',
-                    expertise: 'Python Development, Data Analysis, Machine Learning',
-                    bio: 'Bob is an expert in Python development and data analysis. He loves to extract insights from complex datasets and build intelligent systems.'
-                },
-                {
-                    name: 'Charlie Brown',
-                    position: 'Cyber Security Analyst',
-                    imageUrl: 'https://via.placeholder.com/150/20BF55/FFFFFF?text=CB',
-                    expertise: 'Cyber Security, Network Security, Ethical Hacking',
-                    bio: 'Charlie is a seasoned cyber security analyst with a strong background in protecting digital assets and ensuring data integrity. He is always up-to-date with the latest security threats and countermeasures.'
-                },
-                {
-                    name: 'Diana Prince',
-                    position: 'Creative Director',
-                    imageUrl: 'https://via.placeholder.com/150/F8F9FA/343A40?text=DP',
-                    expertise: 'Graphics, Video Editing, UI/UX Design, Branding',
-                    bio: 'Diana is a creative powerhouse, specializing in graphics, video editing, and UI/UX design. She brings ideas to life with stunning visuals and engaging user experiences.'
-                }
-            ];
+            fetch('/api/team')
+                .then(response => response.json())
+                .then(teamMembersData => {
+                    const displayTeamMembers = () => {
+                        teamMembersGrid.innerHTML = '';
+                        teamMembersData.forEach(member => {
+                            const memberCard = document.createElement('div');
+                            memberCard.className = 'service-card team-member-card';
+                            memberCard.innerHTML = `
+                                <img src="${member.imageUrl}" alt="${member.name}" class="team-member-img">
+                                <h3>${member.name}</h3>
+                                <p>${member.position}</p>
+                            `;
+                            memberCard.addEventListener('click', () => {
+                                modalMemberImg.src = member.imageUrl;
+                                modalMemberImg.alt = member.name;
+                                modalMemberName.textContent = member.name;
+                                modalMemberPosition.textContent = member.position;
+                                modalMemberExpertise.textContent = 'Expertise: ' + member.expertise;
+                                modalMemberBio.textContent = member.bio;
+                                teamMemberModal.style.display = 'block';
+                            });
+                            teamMembersGrid.appendChild(memberCard);
+                        });
+                    };
 
-            const displayTeamMembers = () => {
-                teamMembersGrid.innerHTML = '';
-                teamMembersData.forEach(member => {
-                    const memberCard = document.createElement('div');
-                    memberCard.className = 'service-card team-member-card';
-                    memberCard.innerHTML = `
-                        <img src="${member.imageUrl}" alt="${member.name}" class="team-member-img">
-                        <h3>${member.name}</h3>
-                        <p>${member.position}</p>
-                    `;
-                    memberCard.addEventListener('click', () => {
-                        modalMemberImg.src = member.imageUrl;
-                        modalMemberImg.alt = member.name;
-                        modalMemberName.textContent = member.name;
-                        modalMemberPosition.textContent = member.position;
-                        modalMemberExpertise.textContent = 'Expertise: ' + member.expertise;
-                        modalMemberBio.textContent = member.bio;
-                        teamMemberModal.style.display = 'block';
-                    });
-                    teamMembersGrid.appendChild(memberCard);
+                    displayTeamMembers();
                 });
-            };
 
             modalCloseButton.addEventListener('click', () => {
                 teamMemberModal.style.display = 'none';
