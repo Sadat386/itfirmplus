@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITFirmPlus - Our Projects</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/hero.svg" type="image/svg+xml">
+</head>
+<body class="page-transition">
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Header -->
+    <header class="glassmorphism sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-3xl font-bold text-white">ITFirm<span class="text-teal-400">Plus</span></a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" id="nav-home" class="text-white hover:text-teal-400 transition duration-300">Home</a>
+                <a href="projects.html" id="nav-projects" class="text-white hover:text-teal-400 transition duration-300">Our Projects</a>
+                <a href="team.html" id="nav-team" class="text-white hover:text-teal-400 transition duration-300">Our Team</a>
+                <a href="contact.html" id="nav-contact" class="text-white hover:text-teal-400 transition duration-300">Contact</a>
+                <a href="tel:01775626268" class="bg-blue-500 text-white font-bold py-2 px-6 rounded-full hover:bg-orange-600 transition duration-300">Call Now</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="index.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Home</a>
+            <a href="projects.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Our Projects</a>
+            <a href="team.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Our Team</a>
+            <a href="contact.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Projects Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold fade-in">Our Projects</h1>
+                <p class="text-xl mt-4 text-gray-400 fade-in">A showcase of our dedication to quality and innovation.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 fade-in">
+                    <img src="projects/project1.png" alt="Sakoon Care Website" class="rounded-lg mb-4">
+                    <h3 class="text-2xl font-bold">Sakoon Care - Caregiving Agency Website</h3>
+                    <p class="mt-4 text-gray-400">A compassionate and user-friendly website for a leading caregiving agency.</p>
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <button class="view-details-btn bg-teal-400 text-gray-900 font-bold py-2 px-4 rounded-full hover:bg-teal-500 transition duration-300" data-project="sakoon-care">View Details</button>
+                        <a href="https://www.sakooncare.uk" target="_blank" class="bg-gray-700 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-600 transition duration-300">View Live</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 fade-in">
+                    <img src="projects/project2.png" alt="Nondonkanon E-commerce" class="rounded-lg mb-4">
+                    <h3 class="text-2xl font-bold">Nondonkanon - E-commerce Website</h3>
+                    <p class="mt-4 text-gray-400">A robust e-commerce platform with a seamless shopping experience.</p>
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <button class="view-details-btn bg-teal-400 text-gray-900 font-bold py-2 px-4 rounded-full hover:bg-teal-500 transition duration-300" data-project="nondonkanon">View Details</button>
+                        <a href="https://www.nondonkanon.com" target="_blank" class="bg-gray-700 text-white font-bold py-2 px-4 rounded-full hover:bg-gray-600 transition duration-300">View Live</a>
+                    </div>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 fade-in">
+                    <img src="projects/project3.png" alt="UddogSomobaySomiti Desktop Software" class="rounded-lg mb-4">
+                    <h3 class="text-2xl font-bold">UddogSomobaySomiti - Desktop Software</h3>
+                    <p class="mt-4 text-gray-400">Custom desktop software for streamlined internal operations.</p>
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <button class="view-details-btn bg-teal-400 text-gray-900 font-bold py-2 px-4 rounded-full hover:bg-teal-500 transition duration-300" data-project="uddogsomobaysomiti">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modals for Project Details -->
+    <div id="modal-sakoon-care" class="modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="modal-content bg-gray-800 p-8 rounded-xl shadow-lg max-w-md mx-auto text-center relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">Sakoon Care - Caregiving Agency Website</h3>
+            <img src="projects/project1.png" alt="Sakoon Care Website" class="rounded-lg mb-6 mx-auto w-full">
+            <p class="text-gray-300 text-left">This project involved developing a comprehensive website for Sakoon Care, a caregiving agency dedicated to providing compassionate and professional care services. The website features a user-friendly interface for clients to explore services, read testimonials, and easily get in touch. Key functionalities include service descriptions, an online inquiry form, and a blog section for caregiving resources. The design emphasizes warmth, trustworthiness, and ease of navigation to support families in finding the right care solutions.</p>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="https://www.sakooncare.uk" target="_blank" class="bg-teal-400 text-gray-900 font-bold py-2 px-4 rounded-full hover:bg-teal-500 transition duration-300">View Live Project</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-nondonkanon" class="modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="modal-content bg-gray-800 p-8 rounded-xl shadow-lg max-w-md mx-auto text-center relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">Nondonkanon - E-commerce Website</h3>
+            <img src="projects/project2.png" alt="Nondonkanon E-commerce" class="rounded-lg mb-6 mx-auto w-full">
+            <p class="text-gray-300 text-left">For Nondonkanon, we crafted a robust and visually appealing e-commerce platform designed to offer a seamless online shopping experience. The website integrates secure payment gateways, an intuitive product catalog, and efficient order management systems. Special attention was given to responsive design, ensuring optimal performance across all devices, and enhancing customer engagement to drive sales and expand market reach for Nondonkanon's diverse product range.</p>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="https://www.nondonkanon.com" target="_blank" class="bg-teal-400 text-gray-900 font-bold py-2 px-4 rounded-full hover:bg-teal-500 transition duration-300">View Live Project</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-uddogsomobaysomiti" class="modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="modal-content bg-gray-800 p-8 rounded-xl shadow-lg max-w-md mx-auto text-center relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <h3 class="text-3xl font-bold text-white mb-4">UddogSomobaySomiti - Desktop Software</h3>
+            <img src="projects/project3.png" alt="UddogSomobaySomiti Desktop Software" class="rounded-lg mb-6 mx-auto w-full">
+            <p class="text-gray-300 text-left">This project involved the development of a specialized desktop software application for UddogSomobaySomiti, an agency focused on [specific agency function, e.g., community development, financial management]. The software is designed to streamline their internal operations, enhance data management, and automate key administrative tasks. It provides a secure, efficient, and localized solution tailored to their unique operational requirements, significantly improving productivity and organizational workflow.</p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold">ITFirm<span class="text-teal-400">Plus</span></h3>
+                    <p class="mt-4 text-gray-400 text-sm">Empowering Your Business with Future-Proof IT Solutions.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Quick Links</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-teal-400 transition duration-300">Home</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">Our Projects</a></li>
+                        <li><a href="team.html" class="hover:text-teal-400 transition duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="hover:text-teal-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Featured Projects</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">E-commerce Platforms</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">Mobile App Development</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">Cloud Solutions</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Contact Us</h3>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-3"></i> V8FC+558, Ashulia Road, Savar, Dhaka, Bangladesh</li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> 01775626268</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3"></i> itfirmplus@gmail.com</li>
+                    </ul>
+                    <a href="tel:01775626268" class="bg-teal-400 text-gray-900 font-bold py-2 px-4 mt-4 rounded-full hover:bg-teal-500 transition duration-300 inline-block text-sm">Call Now</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 flex justify-between items-center">
+                <p class="text-sm text-gray-500">&copy; 2025 ITFirmPlus. All Rights Reserved.</p>
+<p class="text-sm text-gray-500 mt-2">Developed by <a href="https://sadat-dev.netlify.app/" target="_blank" class="developer-name">A M Sadat</a></p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300"><i class="fab fa-github text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-teal-400 text-gray-900 p-3 rounded-full shadow-lg hover:bg-teal-500 transition duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,305 @@
+:root {
+    --primary-color: #4C1D95;
+    --accent-color: #2DD4BF;
+    --secondary-accent-color: #F97316;
+    --text-color-light: #F3F4F6;
+    --text-color-dark: #1F2937;
+    --bg-color-light: #FFFFFF;
+    --bg-color-dark: #111827;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Responsive adjustments for header and hero section */
+@media (max-width: 768px) {
+    .glassmorphism {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .hero-headline {
+        font-size: 2.5rem; /* Adjust for mobile */
+    }
+
+    .hero-headline + p { /* Paragraph below hero-headline */
+        font-size: 1rem; /* Adjust for mobile */
+    }
+
+    .hero-headline + p + div .bg-teal-500,
+    .hero-headline + p + div .bg-white {
+        padding: 0.75rem 1.5rem; /* Adjust button padding */
+        font-size: 0.9rem; /* Adjust button font size */
+    }
+
+    .hero-headline + p + div {
+        flex-direction: column; /* Stack buttons vertically */
+        gap: 1rem; /* Space between stacked buttons */
+    }
+
+    .h-\[36rem\] { /* Target the hero section's fixed height */
+        height: auto; /* Remove fixed height */
+        min-height: 80vh; /* Set a minimum height relative to viewport */
+        padding-top: 4rem; /* Add some top padding */
+        padding-bottom: 4rem; /* Add some bottom padding */
+    }
+
+    /* Service Cards */
+    .service-card {
+        padding: 1.5rem; /* Adjust padding for smaller screens */
+    }
+
+    .service-card h3 {
+        font-size: 1.25rem; /* Smaller font size for mobile */
+    }
+
+    .service-card p {
+        font-size: 0.9rem; /* Smaller font size for mobile */
+    }
+
+    /* Footer */
+    .grid-cols-1.md\:grid-cols-4 {
+        grid-template-columns: 1fr; /* Stack columns on mobile */
+    }
+
+    .grid-cols-1.md\:grid-cols-4 > div {
+        margin-bottom: 2rem; /* Add space between stacked footer sections */
+    }
+
+    .grid-cols-1.md\:grid-cols-4 > div:last-child {
+        margin-bottom: 0; /* No bottom margin for the last section */
+    }
+
+    footer .flex.justify-between.items-center {
+        flex-direction: column; /* Stack copyright and social links */
+        text-align: center;
+    }
+
+    footer .flex.justify-between.items-center p {
+        margin-bottom: 1rem; /* Space between stacked elements */
+    }
+
+    /* General typography adjustments */
+    h2 {
+        font-size: 2.5rem; /* Adjust general h2 for mobile */
+    }
+
+    p {
+        font-size: 1rem; /* Adjust general paragraph font size */
+    }
+}
+
+
+
+
+
+
+
+.page-transition {
+    animation: page-fade-in 0.5s ease-in-out;
+}
+
+@keyframes page-fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animated-gradient {
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-accent-color), var(--accent-color));
+    background-size: 400% 400%;
+    animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(50px);
+    opacity: 0.3;
+    z-index: -1;
+}
+
+.blob-1 {
+    width: 300px;
+    height: 300px;
+    background-color: var(--primary-color);
+    top: -100px;
+    left: -100px;
+    animation: blob-animation-1 20s infinite alternate;
+}
+
+@keyframes blob-animation-1 {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(100px, 100px) scale(1.2); }
+}
+
+.blob-2 {
+    width: 200px;
+    height: 200px;
+    background-color: var(--accent-color);
+    bottom: -100px;
+    right: -100px;
+    animation: blob-animation-2 15s infinite alternate;
+}
+
+@keyframes blob-animation-2 {
+    from { transform: translate(0, 0) scale(1); }
+    to { transform: translate(-100px, -100px) scale(0.8); }
+}
+
+.glassmorphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.active-link {
+    color: var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.hero-headline {
+    /* font-family: 'Playfair Display', serif; */ /* Removed unused font */
+    background: -webkit-linear-gradient(#eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-headline .letter {
+    display: inline-block;
+    line-height: 1em;
+}
+
+.form-group {
+    position: relative;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #4A5568;
+    border-radius: 0.5rem;
+    background-color: #2D3748;
+    color: #F7FAFC;
+    transition: border-color 0.3s;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #2DD4BF;
+}
+
+.form-label {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: #A0AEC0;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+.form-input:focus + .form-label,
+.form-input:not(:placeholder-shown) + .form-label {
+    top: -0.75rem;
+    left: 0.75rem;
+    font-size: 0.875rem;
+    color: #2DD4BF;
+    background-color: #2D3748;
+    padding: 0 0.25rem;
+}
+
+.validation-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #48BB78;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.form-input:valid + .form-label + .validation-icon {
+    opacity: 1;
+}
+
+/* Service Card Styling */
+.service-card {
+    text-align: center;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.service-card p {
+    color: #a0aec0;
+}
+
+/* Modal Styling */
+.modal {
+    transition: opacity 0.3s ease;
+}
+
+.modal.show {
+    opacity: 1;
+}
+
+.modal-content {
+    transition: transform 0.3s ease;
+    transform: translateY(-50px);
+}
+
+.modal.show .modal-content {
+    transform: translateY(0);
+}
+
+.developer-name {
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.developer-name:hover {
+    color: var(--accent-color); /* Use accent color on hover */
+    text-shadow: 0 0 8px var(--accent-color); /* Subtle glow on hover */
+}
+
+@keyframes glowing {
+    0% {
+        color: #ff0000;
+        text-shadow: 0 0 5px #ff0000;
+    }
+    25% {
+        color: #00ff00;
+        text-shadow: 0 0 5px #00ff00;
+    }
+    50% {
+        color: #0000ff;
+        text-shadow: 0 0 5px #0000ff;
+    }
+    75% {
+        color: #ffff00;
+        text-shadow: 0 0 5px #ffff00;
+    }
+    100% {
+        color: #ff00ff;
+        text-shadow: 0 0 5px #ff00ff;
+    }
+}

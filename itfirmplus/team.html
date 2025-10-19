@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITFirmPlus - Our Team</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="shortcut icon" href="assets/hero.svg" type="image/svg+xml">
+</head>
+<body class="page-transition">
+
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <!-- Header -->
+    <header class="glassmorphism sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="/" class="text-3xl font-bold text-white">ITFirm<span class="text-teal-400">Plus</span></a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="index.html" id="nav-home" class="text-white hover:text-teal-400 transition duration-300">Home</a>
+                <a href="projects.html" id="nav-projects" class="text-white hover:text-teal-400 transition duration-300">Our Projects</a>
+                <a href="team.html" id="nav-team" class="text-white hover:text-teal-400 transition duration-300">Our Team</a>
+                <a href="contact.html" id="nav-contact" class="text-white hover:text-teal-400 transition duration-300">Contact</a>
+                <a href="tel:01775626268" class="bg-blue-500 text-white font-bold py-2 px-6 rounded-full hover:bg-orange-600 transition duration-300">Call Now</a>
+            </div>
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-white focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800">
+            <a href="index.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Home</a>
+            <a href="projects.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Our Projects</a>
+            <a href="team.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Our Team</a>
+            <a href="contact.html" class="block px-4 py-3 text-sm text-white hover:bg-teal-500 transition duration-300">Contact</a>
+        </div>
+    </header>
+
+    <!-- Team Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h1 class="text-5xl font-bold fade-in">Meet Our Team</h1>
+                <p class="text-xl mt-4 text-gray-400 fade-in">The driving force behind our success.</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-10">
+                <!-- Team Member 1 -->
+                <div class="team-card bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 cursor-pointer fade-in" data-member="a-m-sadat">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-teal-400">
+                            <img src="assets/Member 1.png" alt="A M Sadat" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">A M Sadat</h2>
+                            <p class="text-teal-400 text-lg">Co-Founder</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="skill-badge">Strategy</span>
+                                <span class="skill-badge">Planning</span>
+                                <span class="skill-badge">Tech Expert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 2 -->
+                <div class="team-card bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 cursor-pointer fade-in" data-member="siddharto-sen">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-teal-400">
+                            <img src="assets/Member 2.jpeg" alt="Siddharto Sen" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">Siddharto Sen</h2>
+                            <p class="text-teal-400 text-lg">Co-Founder</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="skill-badge">Tech Expert</span>
+                                <span class="skill-badge">Networking</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="team-card bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 cursor-pointer fade-in" data-member="tasnim-chowdhury">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-32 h-32 rounded-full overflow-hidden border-4 border-teal-400">
+                            <img src="assets/Member 4.jpg" alt="Tasnim Chowdhury" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">Tasnim Chowdhury</h2>
+                            <p class="text-teal-400 text-lg">Co-Founder</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="skill-badge">Marketing</span>
+                                <span class="skill-badge">Cyber Security</span>
+                                <span class="skill-badge">Management</span>  
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="team-card bg-gray-800 p-8 rounded-xl shadow-lg transform hover:-translate-y-2 transition duration-300 cursor-pointer fade-in" data-member="sarwar-hossain">
+                    <div class="flex items-center space-x-6">
+                        <div class="w-32 h-32 rounded-full bg-gray-700 flex items-center justify-center text-gray-500 text-5xl border-4 border-teal-400">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-3xl font-bold">Sarwar Hossain</h2>
+                            <p class="text-teal-400 text-lg">Co-Founder</p>
+                            <div class="flex space-x-3 mt-4">
+                                <span class="skill-badge">Risk Assessment</span>
+                                <span class="skill-badge">Incident Response</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="bg-gray-900 py-20 fade-in">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold">What Our Team Members Say</h2>
+            <div class="mt-12 relative">
+                <div class="testimonial-carousel overflow-hidden relative">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-item bg-gray-800 p-8 rounded-xl shadow-lg max-w-2xl mx-auto">
+                        <p class="text-lg italic text-gray-300">"Our philosophy is built on partnership. We don't just provide services; we integrate with our clients' teams to build robust, scalable solutions that drive real growth. Seeing our clients succeed is the ultimate measure of our own success."</p>
+                        <p class="font-bold mt-6 text-teal-400">- A M Sadat, Co-Founder</p>
+                    </div>
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-item bg-gray-800 p-8 rounded-xl shadow-lg max-w-2xl mx-auto hidden">
+                        <p class="text-lg italic text-gray-300">"I love the challenges and opportunities to grow here. We're truly making a difference for our clients with cutting-edge tech."</p>
+                        <p class="font-bold mt-6 text-teal-400">- Siddharto Sen, Co-Founder</p>
+                    </div>
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-item bg-gray-800 p-8 rounded-xl shadow-lg max-w-2xl mx-auto hidden">
+                        <p class="text-lg italic text-gray-300">"The support and camaraderie among colleagues are exceptional. It's a place where ideas flourish and talent is nurtured."</p>
+                        <p class="font-bold mt-6 text-teal-400">- Tasnim Chowdhury, Co-Founder</p>
+                    </div>
+                </div>
+                <button class="carousel-prev absolute left-0 top-1/2 -translate-y-1/2 bg-gray-700 p-3 rounded-full shadow-md hover:bg-gray-600"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-next absolute right-0 top-1/2 -translate-y-1/2 bg-gray-700 p-3 rounded-full shadow-md hover:bg-gray-600"><i class="fas fa-chevron-right"></i></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="animated-gradient text-white py-20 px-4 text-center fade-in">
+        <h2 class="text-4xl font-bold">Ready to Collaborate with Our Experts?</h2>
+        <p class="text-xl mt-4">Let's build something amazing together. Contact us today!</p>
+        <a href="contact.html" class="bg-white text-gray-900 font-bold py-3 px-8 mt-8 rounded-full hover:bg-gray-200 transition duration-300 transform hover:scale-105">Get in Touch</a>
+    </section>
+
+    <!-- Modals for Team Members -->
+    <div id="modal-a-m-sadat" class="modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="modal-content bg-gray-800 p-8 rounded-xl shadow-lg max-w-md mx-auto text-center relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <img src="assets/Member 1.png" alt="A M Sadat" class="w-32 h-32 rounded-full mx-auto object-cover mb-6 border-4 border-teal-400">
+            <h3 class="text-3xl font-bold text-white">A M Sadat</h3>
+            <p class="text-teal-400 text-lg">CEO</p>
+            <p class="mt-4 text-gray-300">I am over 5 years of experience in the IT industry, specializing in strategic planning and business development. He is passionate about leveraging technology to drive business growth and innovation.</p>
+            <div class="flex justify-center space-x-3 mt-6">
+                <span class="skill-badge-modal">Strategy</span>
+                <span class="skill-badge-modal">Planning</span>
+                <span class="skill-badge-modal">Tech Expert</span>
+            </div>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="#" class="text-gray-400 hover:text-blue-700 transition duration-300"><i class="fab fa-linkedin text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-200 transition duration-300"><i class="fab fa-github text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-twitter text-3xl"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-siddharto-sen" class="modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="modal-content bg-gray-800 p-8 rounded-xl shadow-lg max-w-md mx-auto text-center relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <img src="assets/Member 2.jpeg" alt="Siddharto Sen" class="w-32 h-32 rounded-full mx-auto object-cover mb-6 border-4 border-teal-400">
+            <h3 class="text-3xl font-bold text-white">Siddharto Sen</h3>
+            <p class="text-teal-400 text-lg">Chief Technology Officer</p>
+            <p class="mt-4 text-gray-300">Siddharto is a tech expert with a passion for networking and system architecture. He leads our technical team and ensures our solutions are robust and scalable.</p>
+            <div class="flex justify-center space-x-3 mt-6">
+                <span class="skill-badge-modal">Tech Expert</span>
+                <span class="skill-badge-modal">Networking</span>
+            </div>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="#" class="text-gray-400 hover:text-blue-700 transition duration-300"><i class="fab fa-linkedin text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-200 transition duration-300"><i class="fab fa-github text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-twitter text-3xl"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-tasnim-chowdhury" class="modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="modal-content bg-gray-800 p-8 rounded-xl shadow-lg max-w-md mx-auto text-center relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <img src="assets/Member 4.jpg" alt="Tasnim Chowdhury" class="w-32 h-32 rounded-full mx-auto object-cover mb-6 border-4 border-teal-400">
+            <h3 class="text-3xl font-bold text-white">Tasnim Chowdhury</h3>
+            <p class="text-teal-400 text-lg">Head of Cloud Solutions</p>
+            <p class="mt-4 text-gray-300">Tasnim leads our marketing and cybersecurity divisions, helping clients grow their business securely. He is an expert in digital marketing and security strategies.</p>
+            <div class="flex justify-center space-x-3 mt-6">
+                <span class="skill-badge-modal">Marketing</span>
+                <span class="skill-badge-modal">Cyber Security</span>
+                <span class="skill-badge-modal">Management</span>
+            </div>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="#" class="text-gray-400 hover:text-blue-700 transition duration-300"><i class="fab fa-linkedin text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-200 transition duration-300"><i class="fab fa-github text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-twitter text-3xl"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-sarwar-hossain" class="modal hidden fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50">
+        <div class="modal-content bg-gray-800 p-8 rounded-xl shadow-lg max-w-md mx-auto text-center relative">
+            <button class="modal-close absolute top-4 right-4 text-gray-400 hover:text-white text-2xl">&times;</button>
+            <div class="w-32 h-32 rounded-full bg-gray-700 flex items-center justify-center text-gray-500 text-5xl mb-6 border-4 border-teal-400">
+                <i class="fas fa-user-tie"></i>
+            </div>
+            <h3 class="text-3xl font-bold text-white">Sarwar Hossain</h3>
+            <p class="text-teal-400 text-lg">Chief Security Officer</p>
+            <p class="mt-4 text-gray-300">Sarwar is our security expert, specializing in risk assessment and incident response. He ensures our clients' businesses are protected from all threats.</p>
+            <div class="flex justify-center space-x-3 mt-6">
+                <span class="skill-badge-modal">Risk Assessment</span>
+                <span class="skill-badge-modal">Incident Response</span>
+            </div>
+            <div class="flex justify-center space-x-4 mt-6">
+                <a href="#" class="text-gray-400 hover:text-blue-700 transition duration-300"><i class="fab fa-linkedin text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-gray-200 transition duration-300"><i class="fab fa-github text-3xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-blue-400 transition duration-300"><i class="fab fa-twitter text-3xl"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-8">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold">ITFirm<span class="text-teal-400">Plus</span></h3>
+                    <p class="mt-4 text-gray-400 text-sm">Empowering Your Business with Future-Proof IT Solutions.</p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Quick Links</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-teal-400 transition duration-300">Home</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">Our Projects</a></li>
+                        <li><a href="team.html" class="hover:text-teal-400 transition duration-300">Our Team</a></li>
+                        <li><a href="contact.html" class="hover:text-teal-400 transition duration-300">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Featured Projects</h3>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">E-commerce Platforms</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">Mobile App Development</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">Cloud Solutions</a></li>
+                        <li><a href="projects.html" class="hover:text-teal-400 transition duration-300">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold">Contact Us</h3>
+                    <ul class="mt-4 space-y-2 text-sm text-gray-400">
+                        <li class="flex items-center"><i class="fas fa-map-marker-alt mr-3"></i> V8FC+558, Ashulia Road, Savar, Dhaka, Bangladesh</li>
+                        <li class="flex items-center"><i class="fas fa-phone-alt mr-3"></i> 01775626268</li>
+                        <li class="flex items-center"><i class="fas fa-envelope mr-3"></i> itfirmplus@gmail.com</li>
+                    </ul>
+                    <a href="tel:01775626268" class="bg-teal-400 text-gray-900 font-bold py-2 px-4 mt-4 rounded-full hover:bg-teal-500 transition duration-300 inline-block text-sm">Call Now</a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-6 flex justify-between items-center">
+                <p class="text-sm text-gray-500">&copy; 2025 ITFirmPlus. All Rights Reserved.</p>
+<p class="text-sm text-gray-500 mt-2">Developed by <a href="https://sadat-dev.netlify.app/" target="_blank" class="developer-name">A M Sadat</a></p>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300"><i class="fab fa-linkedin text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-teal-400 transition duration-300"><i class="fab fa-github text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <a href="#" id="back-to-top" class="fixed bottom-8 right-8 bg-teal-400 text-gray-900 p-3 rounded-full shadow-lg hover:bg-teal-500 transition duration-300 hidden">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/ScrollTrigger.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
